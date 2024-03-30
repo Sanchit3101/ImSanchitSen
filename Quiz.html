@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Quiz</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+#quiz {
+  margin-bottom: 20px;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+* {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-image: url(newwallpaper.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                padding: 20px;
+            }
+            
+            #navbar {
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                border-bottom: 1px solid black;
+                padding: 40px;
+            }
+            
+            #img {
+                width: 80px;
+            }
+            
+            #heading {
+                margin-left: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            
+            #credi {
+                margin-left: auto;
+            }
+            
+            #credi a {
+                padding: 5px;
+                color: black;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+            
+            #credi a:hover {
+                background-color: rgba(255, 0, 0, 0.537);
+                border-radius: 3px;
+            }
+            
+            #label {
+                width: 80%;
+                max-width: 600px; /* Added maximum width for responsiveness */
+                margin: 0 auto;
+                font-size: x-large;
+                font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+                height: auto;
+                background-color: rgb(245, 76, 15);
+                text-align: center;
+                padding: 20px;
+                transition: all 1s;
+                margin-top: 50px;
+                border-radius: 10px;
+            }
+            
+            #label:hover {
+                box-shadow: 10px 10px 10px black;
+            }
+            
+            .input-group {
+                margin-bottom: 20px;
+            }
+            
+            .input-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            
+            .input-group select,
+            .input-group input[type="text"],
+            .input-group input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
+            button {
+                margin-top: 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            #outbox {
+                width: 80%;
+                max-width: 600px; /* Added maximum width for responsiveness */
+                margin: 0 auto;
+                font-size: x-large;
+                font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+                height: 300px;
+                background-color: rgb(245, 76, 15);
+                text-align: center;
+                padding: 20px;
+                transition: all 1s;
+                display: none;
+                margin-top: 50px;
+                border-radius: 10px;
+            }
+            #content {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            #aboutMe {
+                width: 20%;
+                margin: 0 auto;
+            }
+
+            #aboutMe img {
+                display: block;
+                margin: 0 auto 20px;
+                max-width: 100%;
+                border-radius: 50%;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+
+            #aboutMe p {
+                font-size: 18px;
+                color: white;
+                line-height: 1.5;
+            }
+            
+            /* Media query for tablets and desktops */
+            @media only screen and (min-width: 768px) {
+                #label, #outbox {
+                    width: 60%; /* Adjusted width for larger screens */
+                }
+            }
+
+  </style>
+</head>
+<body>
+    <div id="navbar">
+        <h1 id="heading" style="font-size:xx-large;">Sanchit Sen</h1>
+        <div id="credi">
+            <a href="index.html">Home</a>
+            <a href="Article.html">Blog</a>
+            <a href="Article.html" style="display: none;" id="postLink">Blog</a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="https://www.linkedin.com/in/sanchit-sen-265779256/">Linkedin</a>
+            <a href="">Contact</a>
+        </div>
+    </div>
+  <div class="container">
+    <h1>DOM Quiz</h1>
+    <div id="quiz"></div>
+    <button id="submit">Submit Quiz</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    const quizData = [
+  {
+    question: 'What does DOM stand for?',
+    answers: {
+      a: 'Document Object Model',
+      b: 'Data Object Model',
+      c: 'Desktop Oriented Mode'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: 'Which method is used to find an HTML element by its ID?',
+    answers: {
+      a: 'document.getElementById()',
+      b: 'document.querySelector()',
+      c: 'document.getElementsByClassName()'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: 'Which property is used to change the text content of an HTML element?',
+    answers: {
+      a: 'innerHTML',
+      b: 'textContent',
+      c: 'innerText',
+      d: 'innerTextContent'
+    },
+    correctAnswer: 'b'
+  },{
+    question: 'Which event occurs when the user clicks on an HTML element?',
+    answers: {
+      a: 'onmouseover',
+      b: 'onchange',
+      c: 'onclick',
+      d: 'onselect'
+    },
+    correctAnswer: 'c'
+  },{
+    question: 'Which method is used to add a new HTML element?',
+    answers: {
+      a: 'appendChild()',
+      b: 'createElement()',
+      c: 'addElement()',
+      d: 'insertElement()'
+    },
+    correctAnswer: 'b'
+  },{
+    question: 'Which DOM property returns the number of characters in a text node?',
+    answers: {
+      a: 'textLength',
+      b: 'length',
+      c: 'charCount',
+      d: 'textCount'
+    },
+    correctAnswer: 'a'
+  },{
+    question: 'Which CSS property is used to set the height of an element?',
+    answers: {
+      a: 'height',
+      b: 'size',
+      c: 'width',
+      d: 'length'
+    },
+    correctAnswer: 'a'
+  },
+  // Add more questions here
+];
+
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
+
+function buildQuiz() {
+  const output = [];
+
+  quizData.forEach((questionData, index) => {
+    const answers = [];
+
+    for (const option in questionData.answers) {
+      answers.push(
+        `<label>
+          <input type="radio" name="question${index}" value="${option}">
+          ${option}: ${questionData.answers[option]}
+        </label>`
+      );
+    }
+
+    output.push(
+      `<div class="question">${index + 1}. ${questionData.question}</div>
+      <div class="answers">${answers.join('')}</div>`
+    );
+  });
+
+  quizContainer.innerHTML = output.join('');
+}
+
+function showResults() {
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+
+  let score = 0;
+
+  quizData.forEach((questionData, index) => {
+    const answerContainer = answerContainers[index];
+    const selector = `input[name=question${index}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === questionData.correctAnswer) {
+      score++;
+    }
+  });
+
+  resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}`;
+}
+
+buildQuiz();
+
+submitButton.addEventListener('click', showResults);
+
+  </script>
+</body>
+</html>

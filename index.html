@@ -1,0 +1,205 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SanchitSen</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-image: url(newwallpaper.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                padding: 20px;
+            }
+            
+            #navbar {
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                border-bottom: 1px solid black;
+                padding: 40px;
+            }
+            
+            #img {
+                width: 80px;
+            }
+            
+            #heading {
+                margin-left: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            
+            #credi {
+                margin-left: auto;
+            }
+            
+            #credi a {
+                padding: 5px;
+                color: black;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+            
+            #credi a:hover {
+                background-color: rgba(255, 0, 0, 0.537);
+                border-radius: 3px;
+            }
+            
+            #label {
+                width: 80%;
+                max-width: 600px; /* Added maximum width for responsiveness */
+                margin: 0 auto;
+                font-size: x-large;
+                font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+                height: auto;
+                background-color: rgb(245, 76, 15);
+                text-align: center;
+                padding: 20px;
+                transition: all 1s;
+                margin-top: 50px;
+                border-radius: 10px;
+            }
+            
+            #label:hover {
+                box-shadow: 10px 10px 10px black;
+            }
+            
+            .input-group {
+                margin-bottom: 20px;
+            }
+            
+            .input-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            
+            .input-group select,
+            .input-group input[type="text"],
+            .input-group input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
+            button {
+                margin-top: 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            #outbox {
+                width: 80%;
+                max-width: 600px; /* Added maximum width for responsiveness */
+                margin: 0 auto;
+                font-size: x-large;
+                font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+                height: 300px;
+                background-color: rgb(245, 76, 15);
+                text-align: center;
+                padding: 20px;
+                transition: all 1s;
+                display: none;
+                margin-top: 50px;
+                border-radius: 10px;
+            }
+            #content {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            #aboutMe {
+                width: 20%;
+                margin: 0 auto;
+            }
+
+            #aboutMe img {
+                display: block;
+                margin: 0 auto 20px;
+                max-width: 100%;
+                border-radius: 50%;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+
+            #aboutMe p {
+                font-size: 18px;
+                color: white;
+                line-height: 1.5;
+            }
+            #info{
+                color: white;
+                background-color: black;
+                
+            }
+            
+            /* Media query for tablets and desktops */
+            @media only screen and (min-width: 768px) {
+                #label, #outbox {
+                    width: 60%; /* Adjusted width for larger screens */
+                }
+            }
+        </style>
+    </head>
+    <body onload="display_post()">
+        <div id="navbar">
+            <h1 id="heading" style="font-size:xx-large;">Sanchit Sen</h1>
+            <div id="credi">
+                <a href="index.html">Home</a>
+                <a href="Article.html">Blog</a>
+                <a href="Article.html" style="display: none;" id="postLink">Blog</a>
+                <a href="Quiz.html">Quiz</a>
+                <a href="https://www.linkedin.com/in/sanchit-sen-265779256/">Linkedin</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+        <div id="content">
+            <div id="aboutMe">
+                <img src="me.jpg" alt="Your Image">
+                
+            </div>
+        </div>
+        <div id="info">I'm Sanchit Sen, a student hailing from the bustling city of New Delhi. Currently, I'm pursuing my Bachelor's degree in Computer Science Engineering (CSE) at UPES Dehradun. My journey in the field of technology has been driven by an insatiable curiosity and a passion for innovation.
+                    
+        With a keen interest in emerging technologies, I find myself constantly exploring new avenues in the ever-evolving realm of IT. The world of coding has always captivated me.
+        
+        Beyond the confines of traditional programming, I am particularly drawn towards the realm of cloud computing. The prospect of harnessing the power of cloud technologies to revolutionize the way we interact with data and applications excites me immensely. I believe that cloud computing holds the key to unlocking unprecedented levels of scalability, flexibility, and efficiency in the digital landscape.
+        
+        As I continue on my academic journey, I am eager to delve deeper into the realms of both coding and cloud computing, seeking to broaden my horizons and make meaningful contributions to the field of technology.I gained experience using various tools provided by cloud service providers such as Cognito, API Gateway, Lambda Functions, and AWS Bedrock. These platforms are transforming the way we design, build and deliver applications, providing large-scale and cost-effective solutions for a wide range of applications.
+
+        AWS Cognito stands out as a comprehensive Identity Management service that provides secure authentication and user management. Its integration with other AWS services makes it the best choice for building user-centric applications with security features.
+        
+        API Gateway simplifies the process of creating, managing and securing APIs. Features such as requests and changes, permissions, and restrictions for customer interactions and backend services encourage effective communication and resource utilization.
+        
+        Lambda functions enable serverless computing, allowing developers to focus on writing code without worrying about infrastructure management. These features can be triggered by multiple scenarios and integrated with other AWS services, providing unmatched flexibility and scalability.
+        
+        AWS Bedrock provides a solid foundation for building and running cloud-native applications with its core services and best practices. It includes a variety of services such as compute, storage, communications, and security to facilitate development and deployment while ensuring reliability and capacity.
+        
+        Overall using this tool has enabled me to create efficient, robust and scalable services. Effective budgeting that meets the needs of today's businesses. Their ease of use, flexibility, and general configuration make them a staple of my cloud development tools.</div>
+
+        
+        
+        <script>
+                
+                    
+    
+        </script>
+    </body>
+    </html>
